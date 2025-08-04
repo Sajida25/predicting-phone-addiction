@@ -1,0 +1,10 @@
+---
+title: "About"
+format: html
+---
+
+Hi, I'm Sajida Rehman, a Lecturer in Statistics at the Higher Education Department, Punjab. I'm passionate about learning and applying data analysis. You can reach me via email at [sajidarehman259@gmail.com](mailto:sajidarehman259@gmail.com), or visit my [GitHub profile](https://github.com/sajida25) to explore more of my work.
+
+This project investigates teen smartphone usage and addiction patterns using logistic regression modeling and visualizations. All source code and data analysis can be found in the project repository on [GitHub](https://github.com/sajida25/predicting-phone-addiction).
+
+This project was created as part of [Kane’s Data Science Bootcamp](https://bootcamp.davidkane.info/).

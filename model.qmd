@@ -1,0 +1,160 @@
+---
+title: "Model"
+format: html
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## 📊 Logistic Regression Model
+
+This section explains the logistic regression model used to predict **teen smartphone addiction** based on behavioral and psychological factors.
+
+---
+
+### 🧮 General Logistic Regression Equation
+
+$$
+\log\left( \frac{P(\text{Addicted} = 1)}{1 - P(\text{Addicted} = 1)} \right) =
+\beta_0 + \beta_1 \cdot \text{DailyUsage} +
+\beta_2 \cdot \text{SleepHours} +
+\beta_3 \cdot \text{SocialMediaTime} +
+\beta_4 \cdot \text{AnxietyLevel} +
+\beta_5 \cdot \text{DepressionLevel}
+$$
+
+Where:
+
+- **DailyUsage**: Daily smartphone usage, in hours  
+- **SleepHours**: Average hours of sleep per night  
+- **SocialMediaTime**: Hours spent on social media per day  
+- **AnxietyLevel**: Self-reported anxiety score  
+- **DepressionLevel**: Self-reported depression score  
+
+---
+
+### Estimated Logistic Regression Equation
+
+The fitted model from your data yields the following equation:
+
+$$
+\log\left( \frac{P(\text{Addicted} = 1)}{1 - P(\text{Addicted} = 1)} \right) =
+-2.869 + 1.111 \cdot \text{DailyUsage} -
+0.580 \cdot \text{SleepHours} +
+1.235 \cdot \text{SocialMediaTime} +
+0.003 \cdot \text{AnxietyLevel} +
+0.046 \cdot \text{DepressionLevel}
+$$
+
+This equation lets us estimate a teen's probability of addiction based on their habits and psychological state.
+
+---
+
+### 🔢 Model Code and Output Table
+
+```{r}
+# Load necessary libraries
+library(readr)
+library(dplyr)
+library(parsnip)
+library(broom)
+library(knitr)
+
+# Load the dataset
+data <- read_csv("C:/Users/user/Desktop/projects/teen_phone_addiction_dataset.csv")
+
+# Create a binary target variable (1 = addicted, 0 = not addicted)
+data <- data |>
+  mutate(addicted = if_else(Addiction_Level >= 8, 1, 0),
+         addicted = factor(addicted))
+
+# Fit logistic regression model
+model <- logistic_reg() |>
+  set_engine("glm") |>
+  fit(addicted ~ Daily_Usage_Hours + Sleep_Hours + Time_on_Social_Media + Anxiety_Level + Depression_Level,
+      data = data)
+
+# Extract tidy summary of coefficients
+tidy_model <- tidy(model$fit)
+
+# Show clean regression table
+kable(tidy_model, caption = "🧮 Logistic Regression Coefficients", digits = 3)
+```
+
+## ✅ Conclusion
+
+The logistic regression table summarizes how each predictor influences the likelihood of teen smartphone addiction:
+
+- **Intercept (-2.869):** Represents the baseline log-odds of being addicted when all predictors are zero.
+- **Daily_Usage_Hours (1.111):** A strong positive coefficient indicates that each additional hour of daily phone use significantly increases the odds of addiction.
+- **Sleep_Hours (-0.580):** The negative sign suggests that more sleep is associated with **lower odds** of addiction. For each extra hour of sleep, the log-odds of addiction decrease.
+- **Time_on_Social_Media (1.235):** Like daily phone use, more time on social media is a strong predictor of addiction.
+- **Anxiety_Level (0.003):** This coefficient is very small and not statistically significant (*p = 0.874*), meaning anxiety level doesn’t show a clear relationship with addiction in this model.
+- **Depression_Level (0.046):** Though the effect is smaller, it is statistically significant (*p = 0.023*), suggesting that higher depression scores slightly increase the likelihood of addiction.
+
+###  Key Takeaways:
+
+- **Daily usage and social media time** are the most impactful predictors.
+- **Sleep** plays a protective role against addiction.
+- **Depression** matters, but **anxiety** does not appear significant in this sample.
+- The p-values confirm that most predictors (except anxiety) are statistically meaningful at conventional thresholds (*p < 0.05*).
+
+These insights can inform strategies for reducing phone addiction in teens by targeting usage habits, promoting better sleep, and supporting mental health—especially depression.
+
+
+```{r}
+# Load libraries
+library(plotly)
+library(dplyr)
+library(readr)
+
+# Read data
+data <- read_csv("C:/Users/user/Desktop/projects/teen_phone_addiction_dataset.csv")
+
+# Create binary addiction variable
+data <- data |>
+  mutate(addicted = if_else(Addiction_Level >= 8, 1, 0))
+
+# Fit logistic regression model
+model <- glm(
+  addicted ~ Daily_Usage_Hours + Time_on_Social_Media + Sleep_Hours + Anxiety_Level + Depression_Level,
+  data = data,
+  family = "binomial"
+)
+
+# Generate grid for plotting
+grid <- expand.grid(
+  Daily_Usage_Hours = seq(min(data$Daily_Usage_Hours), max(data$Daily_Usage_Hours), length.out = 50),
+  Time_on_Social_Media = seq(min(data$Time_on_Social_Media), max(data$Time_on_Social_Media), length.out = 50)
+)
+
+# Set median values for other predictors
+grid$Sleep_Hours <- median(data$Sleep_Hours, na.rm = TRUE)
+grid$Anxiety_Level <- median(data$Anxiety_Level, na.rm = TRUE)
+grid$Depression_Level <- median(data$Depression_Level, na.rm = TRUE)
+
+# Predict addiction probability
+grid$prob <- predict(model, newdata = grid, type = "response")
+
+# Reshape for 3D plot
+z_matrix <- matrix(grid$prob, nrow = 50, byrow = TRUE)
+
+# Create 3D surface plot
+plot_ly(
+  x = ~unique(grid$Daily_Usage_Hours),
+  y = ~unique(grid$Time_on_Social_Media),
+  z = ~z_matrix,
+  type = "surface",
+  colorscale = "Purples"
+) |>
+  layout(
+    title = "3D Surface: Addiction Probability",
+    scene = list(
+      xaxis = list(title = "Daily Usage Hours"),
+      yaxis = list(title = "Time on Social Media"),
+      zaxis = list(title = "Probability of Addiction")
+    )
+  )
+
+```

@@ -1,0 +1,22 @@
+project:
+  type: website
+
+website:
+  title: "Teen Smartphone Usage and Addiction"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Model"
+        href: model.qmd
+      - text: "Visuals"
+        href: visual.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Sources"
+        href: source.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true

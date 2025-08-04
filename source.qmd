@@ -1,0 +1,10 @@
+---
+title: "Sources"
+format: html
+---
+
+The data for this project comes from the **Teen Smartphone Usage and Addiction Impact Dataset**, which was published on [Kaggle](https://www.kaggle.com/datasets/sujaykapadnis/teenage-smartphone-usage-and-addiction-impact) in 2022. The dataset contains detailed survey responses from teenagers, including variables such as daily smartphone usage, time spent on social media, sleep duration, anxiety and depression levels, and a smartphone addiction score ranging from 0 to 10.
+
+To prepare the data for analysis, we performed several data cleaning steps. We removed any rows with missing or incomplete values to ensure the reliability of the logistic regression model. We also converted categorical variables like school grade and gender into appropriate factor types for modeling and visualization. The smartphone addiction score was binarized to classify individuals as "addicted" or "not addicted" based on a predefined threshold.
+
+This cleaned and processed data was then used to build a logistic regression model and create various 2D and 3D visualizations that help explain the patterns and factors contributing to teen smartphone addiction.

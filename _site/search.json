@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Teen Smartphone Usage and Addiction",
+    "section": "",
+    "text": "Teen phone addiction is influenced by a combination of screen time, sleep habits, and psychological well-being. This project uses data from the Teen Smartphone Usage and Addiction Impact Dataset, published on Kaggle in 2022. The dataset includes information on smartphone usage, sleep duration, time spent on social media, and levels of anxiety and depression, along with an addiction score used to classify individuals as either addicted or not. We modeled addiction as a binary outcome using logistic regression, with phone usage, sleep patterns, social media time, and mental health indicators as predictors. The analysis revealed that higher phone use and greater time spent on social media significantly increase the likelihood of addiction, while longer sleep duration reduces it. Notably, each additional hour spent on the phone increases the odds of addiction by approximately three times, whereas an extra hour of sleep lowers those odds by about 44%."
+  },
+  {
+    "objectID": "index.html#summary",
+    "href": "index.html#summary",
+    "title": "Teen Smartphone Usage and Addiction",
+    "section": "",
+    "text": "Teen phone addiction is influenced by a combination of screen time, sleep habits, and psychological well-being. This project uses data from the Teen Smartphone Usage and Addiction Impact Dataset, published on Kaggle in 2022. The dataset includes information on smartphone usage, sleep duration, time spent on social media, and levels of anxiety and depression, along with an addiction score used to classify individuals as either addicted or not. We modeled addiction as a binary outcome using logistic regression, with phone usage, sleep patterns, social media time, and mental health indicators as predictors. The analysis revealed that higher phone use and greater time spent on social media significantly increase the likelihood of addiction, while longer sleep duration reduces it. Notably, each additional hour spent on the phone increases the odds of addiction by approximately three times, whereas an extra hour of sleep lowers those odds by about 44%."
+  },
+  {
+    "objectID": "index.html#teen-phone-addiction-animation",
+    "href": "index.html#teen-phone-addiction-animation",
+    "title": "Teen Smartphone Usage and Addiction",
+    "section": "📱 Teen Phone Addiction Animation",
+    "text": "📱 Teen Phone Addiction Animation"
+  },
+  {
+    "objectID": "model.html",
+    "href": "model.html",
+    "title": "Model",
+    "section": "",
+    "text": "This section explains the logistic regression model used to predict teen smartphone addiction based on behavioral and psychological factors.\n\n\n\n\\[\n\\log\\left( \\frac{P(\\text{Addicted} = 1)}{1 - P(\\text{Addicted} = 1)} \\right) =\n\\beta_0 + \\beta_1 \\cdot \\text{DailyUsage} +\n\\beta_2 \\cdot \\text{SleepHours} +\n\\beta_3 \\cdot \\text{SocialMediaTime} +\n\\beta_4 \\cdot \\text{AnxietyLevel} +\n\\beta_5 \\cdot \\text{DepressionLevel}\n\\]\nWhere:\n\nDailyUsage: Daily smartphone usage, in hours\n\nSleepHours: Average hours of sleep per night\n\nSocialMediaTime: Hours spent on social media per day\n\nAnxietyLevel: Self-reported anxiety score\n\nDepressionLevel: Self-reported depression score\n\n\n\n\n\nThe fitted model from your data yields the following equation:\n\\[\n\\log\\left( \\frac{P(\\text{Addicted} = 1)}{1 - P(\\text{Addicted} = 1)} \\right) =\n-2.869 + 1.111 \\cdot \\text{DailyUsage} -\n0.580 \\cdot \\text{SleepHours} +\n1.235 \\cdot \\text{SocialMediaTime} +\n0.003 \\cdot \\text{AnxietyLevel} +\n0.046 \\cdot \\text{DepressionLevel}\n\\]\nThis equation lets us estimate a teen’s probability of addiction based on their habits and psychological state.\n\n\n\n\n\n\n\n🧮 Logistic Regression Coefficients\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-2.869\n0.375\n-7.648\n0.000\n\n\nDaily_Usage_Hours\n1.111\n0.048\n23.081\n0.000\n\n\nSleep_Hours\n-0.580\n0.043\n-13.356\n0.000\n\n\nTime_on_Social_Media\n1.235\n0.072\n17.110\n0.000\n\n\nAnxiety_Level\n0.003\n0.020\n0.159\n0.874\n\n\nDepression_Level\n0.046\n0.020\n2.268\n0.023"
+  },
+  {
+    "objectID": "model.html#logistic-regression-model",
+    "href": "model.html#logistic-regression-model",
+    "title": "Model",
+    "section": "",
+    "text": "This section explains the logistic regression model used to predict teen smartphone addiction based on behavioral and psychological factors.\n\n\n\n\\[\n\\log\\left( \\frac{P(\\text{Addicted} = 1)}{1 - P(\\text{Addicted} = 1)} \\right) =\n\\beta_0 + \\beta_1 \\cdot \\text{DailyUsage} +\n\\beta_2 \\cdot \\text{SleepHours} +\n\\beta_3 \\cdot \\text{SocialMediaTime} +\n\\beta_4 \\cdot \\text{AnxietyLevel} +\n\\beta_5 \\cdot \\text{DepressionLevel}\n\\]\nWhere:\n\nDailyUsage: Daily smartphone usage, in hours\n\nSleepHours: Average hours of sleep per night\n\nSocialMediaTime: Hours spent on social media per day\n\nAnxietyLevel: Self-reported anxiety score\n\nDepressionLevel: Self-reported depression score\n\n\n\n\n\nThe fitted model from your data yields the following equation:\n\\[\n\\log\\left( \\frac{P(\\text{Addicted} = 1)}{1 - P(\\text{Addicted} = 1)} \\right) =\n-2.869 + 1.111 \\cdot \\text{DailyUsage} -\n0.580 \\cdot \\text{SleepHours} +\n1.235 \\cdot \\text{SocialMediaTime} +\n0.003 \\cdot \\text{AnxietyLevel} +\n0.046 \\cdot \\text{DepressionLevel}\n\\]\nThis equation lets us estimate a teen’s probability of addiction based on their habits and psychological state.\n\n\n\n\n\n\n\n🧮 Logistic Regression Coefficients\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n-2.869\n0.375\n-7.648\n0.000\n\n\nDaily_Usage_Hours\n1.111\n0.048\n23.081\n0.000\n\n\nSleep_Hours\n-0.580\n0.043\n-13.356\n0.000\n\n\nTime_on_Social_Media\n1.235\n0.072\n17.110\n0.000\n\n\nAnxiety_Level\n0.003\n0.020\n0.159\n0.874\n\n\nDepression_Level\n0.046\n0.020\n2.268\n0.023"
+  },
+  {
+    "objectID": "model.html#conclusion",
+    "href": "model.html#conclusion",
+    "title": "Model",
+    "section": "✅ Conclusion",
+    "text": "✅ Conclusion\nThe logistic regression table summarizes how each predictor influences the likelihood of teen smartphone addiction:\n\nIntercept (-2.869): Represents the baseline log-odds of being addicted when all predictors are zero.\nDaily_Usage_Hours (1.111): A strong positive coefficient indicates that each additional hour of daily phone use significantly increases the odds of addiction.\nSleep_Hours (-0.580): The negative sign suggests that more sleep is associated with lower odds of addiction. For each extra hour of sleep, the log-odds of addiction decrease.\nTime_on_Social_Media (1.235): Like daily phone use, more time on social media is a strong predictor of addiction.\nAnxiety_Level (0.003): This coefficient is very small and not statistically significant (p = 0.874), meaning anxiety level doesn’t show a clear relationship with addiction in this model.\nDepression_Level (0.046): Though the effect is smaller, it is statistically significant (p = 0.023), suggesting that higher depression scores slightly increase the likelihood of addiction.\n\n\nKey Takeaways:\n\nDaily usage and social media time are the most impactful predictors.\nSleep plays a protective role against addiction.\nDepression matters, but anxiety does not appear significant in this sample.\nThe p-values confirm that most predictors (except anxiety) are statistically meaningful at conventional thresholds (p &lt; 0.05).\n\nThese insights can inform strategies for reducing phone addiction in teens by targeting usage habits, promoting better sleep, and supporting mental health—especially depression."
+  },
+  {
+    "objectID": "model.html#interpretation",
+    "href": "model.html#interpretation",
+    "title": "Teen Smartphone Usage and Addiction",
+    "section": "",
+    "text": "The waffle chart above illustrates the proportion of teens who are addicted versus not addicted to smartphones based on the dataset.\nEach square represents 1% of the total sample.\nPurple squares correspond to teens classified as addicted (Addiction_Level ≥ 8).\nPink squares represent teens who are not addicted.\nSince the purple section is larger than the pink, it clearly shows that more than half of the teens in this dataset exhibit signs of smartphone addiction.\nThis chart provides a quick and intuitive view of the overall addiction distribution—helping highlight the scale of the issue among teens."
+  },
+  {
+    "objectID": "model.html#waffle-chart-teen-smartphone-addiction-ratio",
+    "href": "model.html#waffle-chart-teen-smartphone-addiction-ratio",
+    "title": "Visuals",
+    "section": "",
+    "text": "{r} library(ggplot2) library(waffle) library(dplyr) library(readr) library(hrbrthemes)"
+  },
+  {
+    "objectID": "visual.html",
+    "href": "visual.html",
+    "title": "Visuals",
+    "section": "",
+    "text": "This chart visualizes the proportion of teenagers classified as addicted versus not addicted to smartphones,\nbased on their reported behavior and psychological indicators.\nEach square in the waffle chart represents 1% of the total sample.\nThe purple section corresponds to teens who are addicted, while the pink section represents those not addicted.\nThe dominance of purple clearly illustrates that a greater percentage of teens in the dataset are addicted to smartphones,\nemphasizing the urgent need for awareness campaigns and preventive intervention strategies.\n\n\n\n\n\n\n\nThis 3D surface plot illustrates the predicted probability of smartphone addiction among teenagers based on two behavioral variables:\nDaily Usage Hours (x-axis)\nTime on Social Media (y-axis)\nThe vertical (z-axis) represents the likelihood of being classified as addicted, as calculated by a logistic regression model."
+  },
+  {
+    "objectID": "visual.html#waffle-chart-teen-smartphone-addiction-ratio",
+    "href": "visual.html#waffle-chart-teen-smartphone-addiction-ratio",
+    "title": "Visuals",
+    "section": "",
+    "text": "This chart visualizes the proportion of teenagers classified as addicted versus not addicted to smartphones,\nbased on their reported behavior and psychological indicators.\nEach square in the waffle chart represents 1% of the total sample.\nThe purple section corresponds to teens who are addicted, while the pink section represents those not addicted.\nThe dominance of purple clearly illustrates that a greater percentage of teens in the dataset are addicted to smartphones,\nemphasizing the urgent need for awareness campaigns and preventive intervention strategies.\n\n\n\n\n\n\n\nThis 3D surface plot illustrates the predicted probability of smartphone addiction among teenagers based on two behavioral variables:\nDaily Usage Hours (x-axis)\nTime on Social Media (y-axis)\nThe vertical (z-axis) represents the likelihood of being classified as addicted, as calculated by a logistic regression model."
+  },
+  {
+    "objectID": "visual.html#interpretation-1",
+    "href": "visual.html#interpretation-1",
+    "title": "Visuals",
+    "section": "Interpretation",
+    "text": "Interpretation\nThe surface shows that as both daily smartphone use and social media time increase, the probability of addiction rises sharply.\nThe color gradient ranges from dark purple (low probability) to bright yellow (high probability), using the Viridis color scale for better visual contrast.\nA significant portion of the plot is yellow, indicating that many teens with high screen time are highly likely to be addicted.\nIn contrast, teens with lower values on both axes appear in the darker zones, suggesting a lower risk of addiction."
+  },
+  {
+    "objectID": "visual.html#key-insight",
+    "href": "visual.html#key-insight",
+    "title": "Visuals",
+    "section": "Key Insight",
+    "text": "Key Insight\nThis visualization emphasizes how combined behavioral factors, such as screen time and social media use, contribute to the risk of smartphone addiction. It underscores the importance of monitoring and managing digital habits to support teen mental health."
+  },
+  {
+    "objectID": "index.html#teen-phone-addiction",
+    "href": "index.html#teen-phone-addiction",
+    "title": "Teen Smartphone Usage and Addiction",
+    "section": "Teen Phone Addiction",
+    "text": "Teen Phone Addiction"
+  },
+  {
+    "objectID": "index.html#teen-smartphone-usage-vs.-addiction-level",
+    "href": "index.html#teen-smartphone-usage-vs.-addiction-level",
+    "title": "Teen Smartphone Usage and Addiction",
+    "section": "📊 Teen Smartphone Usage vs. Addiction Level",
+    "text": "📊 Teen Smartphone Usage vs. Addiction Level\nThis animated bubble chart visualizes the relationship between daily smartphone usage and addiction level among teenagers, across different school grades (7th to 12th).\n\nChart Details\n\nX-axis: Daily Usage Hours\n\nY-axis: Addiction Level (0–10)\n\nColor: Gender (blue = Male, pink = Female)\n\nSize: Sleep Hours (larger bubbles = more sleep)\n\n\n\nInterpretation\n\nTeens with higher daily phone usage generally report higher addiction levels.\nAddiction levels tend to cluster between 8–10, even at moderate usage levels.\nBoth genders exhibit similar trends in addiction, with no major visual gap between male and female students.\nLarger bubbles (more sleep) tend to be positioned at lower addiction levels, suggesting that more sleep might help buffer phone addiction.\n\nThis animated visualization reveals how addiction levels change as teens progress through school, highlighting the potential impact of sleep and screen time on teen well-being."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi, I’m Sajida Rehman, a Lecturer in Statistics at the Higher Education Department, Punjab. I’m passionate about learning and applying data analysis. You can reach me via email at sajidarehman259@gmail.com, or visit my GitHub profile to explore more of my work.\nThis project investigates teen smartphone usage and addiction patterns using logistic regression modeling and visualizations. All source code and data analysis can be found in the project repository on GitHub.\nThis project was created as part of Kane’s Data Science Bootcamp."
+  },
+  {
+    "objectID": "source.html",
+    "href": "source.html",
+    "title": "Sources",
+    "section": "",
+    "text": "The data for this project comes from the Teen Smartphone Usage and Addiction Impact Dataset, which was published on Kaggle in 2022. The dataset contains detailed survey responses from teenagers, including variables such as daily smartphone usage, time spent on social media, sleep duration, anxiety and depression levels, and a smartphone addiction score ranging from 0 to 10.\nTo prepare the data for analysis, we performed several data cleaning steps. We removed any rows with missing or incomplete values to ensure the reliability of the logistic regression model. We also converted categorical variables like school grade and gender into appropriate factor types for modeling and visualization. The smartphone addiction score was binarized to classify individuals as “addicted” or “not addicted” based on a predefined threshold.\nThis cleaned and processed data was then used to build a logistic regression model and create various 2D and 3D visualizations that help explain the patterns and factors contributing to teen smartphone addiction."
+  }
+]

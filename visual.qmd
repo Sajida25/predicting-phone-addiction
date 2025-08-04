@@ -1,0 +1,140 @@
+---
+title: "Visuals"
+format: html
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Waffle Chart: Teen Smartphone Addiction Ratio
+
+```{r}
+# Load required libraries
+library(ggplot2)
+library(waffle)
+library(dplyr)
+library(readr)
+library(hrbrthemes)
+
+# Load the dataset
+data <- read_csv("C:/Users/user/Desktop/projects/teen_phone_addiction_dataset.csv")
+
+# Create a binary variable based on Addiction_Level
+data <- data |>
+  mutate(addicted = if_else(Addiction_Level >= 8, "Addicted", "Not Addicted"))
+
+# Calculate proportions
+counts <- data |>
+  count(addicted) |>
+  mutate(prop = round(n / sum(n) * 100))
+
+# Prepare data for waffle chart
+waffle_data <- setNames(counts$prop, counts$addicted)
+
+# Create the waffle chart
+waffle(
+  parts = waffle_data,
+  rows = 10,
+  colors = c("#B388EB", "#FFB6C1"),  # Purple and Pink
+  size = 1.3,
+  title = "Teen Smartphone Addiction: Proportion Chart",
+  xlab = "Each square = 1% of teens"
+) +
+  theme_ipsum(base_family = "Arial", base_size = 14) +
+  theme(
+    plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "#4A148C"),
+    axis.title = element_text(size = 12),
+    legend.position = "bottom"
+  )
+```
+
+### 📊 Interpretation
+
+This chart visualizes the proportion of teenagers classified as **addicted** versus **not addicted** to smartphones,  
+based on their reported behavior and psychological indicators.
+
+Each square in the waffle chart represents **1%** of the total sample.  
+The **purple section** corresponds to teens who are addicted, while the **pink section** represents those not addicted.
+
+The dominance of purple clearly illustrates that a **greater percentage of teens in the dataset are addicted to smartphones**,  
+emphasizing the urgent need for **awareness campaigns** and **preventive intervention strategies**.
+
+---
+
+
+
+```{r}
+library(plotly)
+library(dplyr)
+library(readr)
+
+# Read data
+data <- read_csv("C:/Users/user/Desktop/projects/teen_phone_addiction_dataset.csv")
+
+# Create binary addiction variable
+data <- data |>
+  mutate(addicted = if_else(Addiction_Level >= 8, 1, 0))
+
+# Fit logistic regression model
+model <- glm(
+  addicted ~ Daily_Usage_Hours + Time_on_Social_Media + Sleep_Hours + Anxiety_Level + Depression_Level,
+  data = data,
+  family = "binomial"
+)
+
+# Generate grid for plotting
+grid <- expand.grid(
+  Daily_Usage_Hours = seq(min(data$Daily_Usage_Hours), max(data$Daily_Usage_Hours), length.out = 50),
+  Time_on_Social_Media = seq(min(data$Time_on_Social_Media), max(data$Time_on_Social_Media), length.out = 50)
+)
+
+# Set median values for other predictors
+grid$Sleep_Hours <- median(data$Sleep_Hours, na.rm = TRUE)
+grid$Anxiety_Level <- median(data$Anxiety_Level, na.rm = TRUE)
+grid$Depression_Level <- median(data$Depression_Level, na.rm = TRUE)
+
+# Predict addiction probability
+grid$prob <- predict(model, newdata = grid, type = "response")
+
+# Reshape for 3D plot
+z_matrix <- matrix(grid$prob, nrow = 50, byrow = TRUE)
+
+# Create 3D surface plot with Viridis color scale
+plot_ly(
+  x = ~unique(grid$Daily_Usage_Hours),
+  y = ~unique(grid$Time_on_Social_Media),
+  z = ~z_matrix,
+  type = "surface",
+  colorscale = "Viridis"
+) |>
+  layout(
+    title = "3D Surface: Addiction Probability",
+    scene = list(
+      xaxis = list(title = "Daily Usage Hours"),
+      yaxis = list(title = "Time on Social Media"),
+      zaxis = list(title = "Probability of Addiction")
+    )
+  )
+
+```
+
+This 3D surface plot illustrates the predicted probability of smartphone addiction among teenagers based on two behavioral variables:
+
+Daily Usage Hours (x-axis)
+
+Time on Social Media (y-axis)
+
+The vertical (z-axis) represents the likelihood of being classified as addicted, as calculated by a logistic regression model.
+
+## Interpretation
+The surface shows that as both daily smartphone use and social media time increase, the probability of addiction rises sharply.
+
+The color gradient ranges from dark purple (low probability) to bright yellow (high probability), using the Viridis color scale for better visual contrast.
+
+A significant portion of the plot is yellow, indicating that many teens with high screen time are highly likely to be addicted.
+
+In contrast, teens with lower values on both axes appear in the darker zones, suggesting a lower risk of addiction.
+
+## Key Insight
+This visualization emphasizes how combined behavioral factors, such as screen time and social media use, contribute to the risk of smartphone addiction. It underscores the importance of monitoring and managing digital habits to support teen mental health.

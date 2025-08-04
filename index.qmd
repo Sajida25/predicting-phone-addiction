@@ -1,0 +1,37 @@
+---
+title: "Teen Smartphone Usage and Addiction"
+author: "Sajida Rehman"
+format: html
+---
+
+
+## Summary:
+
+Teen phone addiction is influenced by a combination of screen time, sleep habits, and psychological well-being. This project uses data from the Teen Smartphone Usage and Addiction Impact Dataset, published on Kaggle in 2022. The dataset includes information on smartphone usage, sleep duration, time spent on social media, and levels of anxiety and depression, along with an addiction score used to classify individuals as either addicted or not. We modeled addiction as a binary outcome using logistic regression, with phone usage, sleep patterns, social media time, and mental health indicators as predictors. The analysis revealed that higher phone use and greater time spent on social media significantly increase the likelihood of addiction, while longer sleep duration reduces it. Notably, each additional hour spent on the phone increases the odds of addiction by approximately three times, whereas an extra hour of sleep lowers those odds by about 44%.
+
+
+
+##  Teen Phone Addiction
+
+![](teen_addiction.gif)
+
+## 📊 Teen Smartphone Usage vs. Addiction Level
+
+This animated bubble chart visualizes the relationship between **daily smartphone usage** and **addiction level** among teenagers, across different **school grades (7th to 12th)**.
+
+### Chart Details
+
+- **X-axis**: **Daily Usage Hours**  
+- **Y-axis**: **Addiction Level (0–10)**  
+- **Color**: Gender (blue = Male, pink = Female)  
+- **Size**: Sleep Hours (larger bubbles = more sleep)
+
+### Interpretation
+
+- Teens with higher daily phone usage generally report **higher addiction levels**.
+- **Addiction levels tend to cluster between 8–10**, even at moderate usage levels.
+- Both genders exhibit similar trends in addiction, with no major visual gap between male and female students.
+- **Larger bubbles** (more sleep) tend to be positioned at **lower addiction levels**, suggesting that **more sleep might help buffer phone addiction**.
+
+This animated visualization reveals how addiction levels change as teens progress through school, highlighting the potential impact of **sleep and screen time** on teen well-being.
+
