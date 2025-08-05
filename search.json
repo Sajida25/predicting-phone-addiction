@@ -4,28 +4,28 @@
     "href": "visual.html",
     "title": "Visuals",
     "section": "",
-    "text": "This chart visualizes the proportion of teenagers classified as addicted versus not addicted to smartphones,\nbased on their reported behavior and psychological indicators.\nEach square in the waffle chart represents 1% of the total sample.\nThe purple section corresponds to teens who are addicted, while the pink section represents those not addicted.\nThe dominance of purple clearly illustrates that a greater percentage of teens in the dataset are addicted to smartphones,\nemphasizing the urgent need for awareness campaigns and preventive intervention strategies.\n\n\n\n\n\n\n\nThis 3D surface plot illustrates the predicted probability of smartphone addiction among teenagers based on two behavioral variables:\nDaily Usage Hours (x-axis)\nTime on Social Media (y-axis)\nThe vertical (z-axis) represents the likelihood of being classified as addicted, as calculated by a logistic regression model."
+    "text": "This waffle chart visualizes the proportion of teenagers who are addicted to their smartphones (Addiction_Level ≥ 8).\n\nEach square represents 1% of the dataset.\nPurple squares = teens classified as Addicted.\nPink squares = teens classified as Not Addicted.\n\n\n\n\nA majority of teens in the dataset are addicted. This suggests that smartphone dependency is a serious concern and may require interventions from parents, teachers, and health professionals."
   },
   {
     "objectID": "visual.html#waffle-chart-teen-smartphone-addiction-ratio",
     "href": "visual.html#waffle-chart-teen-smartphone-addiction-ratio",
     "title": "Visuals",
     "section": "",
-    "text": "This chart visualizes the proportion of teenagers classified as addicted versus not addicted to smartphones,\nbased on their reported behavior and psychological indicators.\nEach square in the waffle chart represents 1% of the total sample.\nThe purple section corresponds to teens who are addicted, while the pink section represents those not addicted.\nThe dominance of purple clearly illustrates that a greater percentage of teens in the dataset are addicted to smartphones,\nemphasizing the urgent need for awareness campaigns and preventive intervention strategies.\n\n\n\n\n\n\n\nThis 3D surface plot illustrates the predicted probability of smartphone addiction among teenagers based on two behavioral variables:\nDaily Usage Hours (x-axis)\nTime on Social Media (y-axis)\nThe vertical (z-axis) represents the likelihood of being classified as addicted, as calculated by a logistic regression model."
+    "text": "This waffle chart visualizes the proportion of teenagers who are addicted to their smartphones (Addiction_Level ≥ 8).\n\nEach square represents 1% of the dataset.\nPurple squares = teens classified as Addicted.\nPink squares = teens classified as Not Addicted.\n\n\n\n\nA majority of teens in the dataset are addicted. This suggests that smartphone dependency is a serious concern and may require interventions from parents, teachers, and health professionals."
   },
   {
-    "objectID": "visual.html#interpretation-1",
-    "href": "visual.html#interpretation-1",
+    "objectID": "visual.html#d-surface-plot-addiction-probability-by-usage-social-media-time",
+    "href": "visual.html#d-surface-plot-addiction-probability-by-usage-social-media-time",
     "title": "Visuals",
-    "section": "Interpretation",
-    "text": "Interpretation\nThe surface shows that as both daily smartphone use and social media time increase, the probability of addiction rises sharply.\nThe color gradient ranges from dark purple (low probability) to bright yellow (high probability), using the Viridis color scale for better visual contrast.\nA significant portion of the plot is yellow, indicating that many teens with high screen time are highly likely to be addicted.\nIn contrast, teens with lower values on both axes appear in the darker zones, suggesting a lower risk of addiction."
+    "section": "🌐 3D Surface Plot: Addiction Probability by Usage & Social Media Time",
+    "text": "🌐 3D Surface Plot: Addiction Probability by Usage & Social Media Time\n\n\n\n\n\n\n\nInterpretation\nThis 3D surface plot shows how Daily Phone Usage Hours and Time on Social Media affect the predicted probability of smartphone addiction.\n\nX-axis: Daily phone use (in hours)\nY-axis: Time on social media (in hours)\nZ-axis (color & height): Probability of being addicted\n\n\n\nKey Insight:\nAs both screen time and social media time increase, the risk of addiction sharply rises. Teens who use their phones heavily and spend more time on social platforms are much more likely to fall into the “Addicted” category."
   },
   {
-    "objectID": "visual.html#key-insight",
-    "href": "visual.html#key-insight",
+    "objectID": "visual.html#summary-of-visual-insights",
+    "href": "visual.html#summary-of-visual-insights",
     "title": "Visuals",
-    "section": "Key Insight",
-    "text": "Key Insight\nThis visualization emphasizes how combined behavioral factors, such as screen time and social media use, contribute to the risk of smartphone addiction. It underscores the importance of monitoring and managing digital habits to support teen mental health."
+    "section": "✅ Summary of Visual Insights",
+    "text": "✅ Summary of Visual Insights\n\nWaffle Chart shows that a majority of teens in the dataset are addicted.\n3D Surface Plot reveals that addiction probability increases sharply with more screen and social media use.\nThese insights can guide awareness campaigns, parental monitoring, and mental health programs targeting smartphone usage among teenagers."
   },
   {
     "objectID": "model.html",
