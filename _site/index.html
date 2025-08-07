@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sajida Rehman">
 
 <title>Teen Smartphone Usage and Addiction</title>
 <style>
@@ -126,12 +125,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary:</a></li>
-  <li><a href="#teen-phone-addiction" id="toc-teen-phone-addiction" class="nav-link" data-scroll-target="#teen-phone-addiction">Teen Phone Addiction</a></li>
-  <li><a href="#teen-smartphone-usage-vs.-addiction-level" id="toc-teen-smartphone-usage-vs.-addiction-level" class="nav-link" data-scroll-target="#teen-smartphone-usage-vs.-addiction-level">📊 Teen Smartphone Usage vs.&nbsp;Addiction Level</a>
-  <ul class="collapse">
-  <li><a href="#chart-details" id="toc-chart-details" class="nav-link" data-scroll-target="#chart-details">Chart Details</a></li>
+  <li><a href="#teen-smartphone-usage-vs.-addiction-level" id="toc-teen-smartphone-usage-vs.-addiction-level" class="nav-link" data-scroll-target="#teen-smartphone-usage-vs.-addiction-level">Teen Smartphone Usage vs.&nbsp;Addiction Level</a></li>
   <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -147,12 +142,6 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Sajida Rehman </p>
-          </div>
-  </div>
     
   
     
@@ -163,41 +152,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><img src="teen_addiction.gif" class="img-fluid"></p>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary:</h2>
 <p>Teen phone addiction is influenced by a combination of screen time, sleep habits, and psychological well-being. This project uses data from the Teen Smartphone Usage and Addiction Impact Dataset, published on Kaggle in 2022. The dataset includes information on smartphone usage, sleep duration, time spent on social media, and levels of anxiety and depression, along with an addiction score used to classify individuals as either addicted or not. We modeled addiction as a binary outcome using logistic regression, with phone usage, sleep patterns, social media time, and mental health indicators as predictors. The analysis revealed that higher phone use and greater time spent on social media significantly increase the likelihood of addiction, while longer sleep duration reduces it. Notably, each additional hour spent on the phone increases the odds of addiction by approximately three times, whereas an extra hour of sleep lowers those odds by about 44%.</p>
 </section>
-<section id="teen-phone-addiction" class="level2">
-<h2 class="anchored" data-anchor-id="teen-phone-addiction">Teen Phone Addiction</h2>
-<p><img src="teen_addiction.gif" class="img-fluid"></p>
-</section>
 <section id="teen-smartphone-usage-vs.-addiction-level" class="level2">
-<h2 class="anchored" data-anchor-id="teen-smartphone-usage-vs.-addiction-level">📊 Teen Smartphone Usage vs.&nbsp;Addiction Level</h2>
+<h2 class="anchored" data-anchor-id="teen-smartphone-usage-vs.-addiction-level">Teen Smartphone Usage vs.&nbsp;Addiction Level</h2>
 <p>This animated bubble chart visualizes the relationship between <strong>daily smartphone usage</strong> and <strong>addiction level</strong> among teenagers, across different <strong>school grades (7th to 12th)</strong>.</p>
-<section id="chart-details" class="level3">
-<h3 class="anchored" data-anchor-id="chart-details">Chart Details</h3>
-<ul>
-<li><strong>X-axis</strong>: <strong>Daily Usage Hours</strong><br>
-</li>
-<li><strong>Y-axis</strong>: <strong>Addiction Level (0–10)</strong><br>
-</li>
-<li><strong>Color</strong>: Gender (blue = Male, pink = Female)<br>
-</li>
-<li><strong>Size</strong>: Sleep Hours (larger bubbles = more sleep)</li>
-</ul>
 </section>
-<section id="interpretation" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
 <ul>
 <li>Teens with higher daily phone usage generally report <strong>higher addiction levels</strong>.</li>
 <li><strong>Addiction levels tend to cluster between 8–10</strong>, even at moderate usage levels.</li>
 <li>Both genders exhibit similar trends in addiction, with no major visual gap between male and female students.</li>
 <li><strong>Larger bubbles</strong> (more sleep) tend to be positioned at <strong>lower addiction levels</strong>, suggesting that <strong>more sleep might help buffer phone addiction</strong>.</li>
 </ul>
-<p>This animated visualization reveals how addiction levels change as teens progress through school, highlighting the potential impact of <strong>sleep and screen time</strong> on teen well-being.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

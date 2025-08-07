@@ -7,13 +7,13 @@ execute:
   message: false
 ---
 
-## 📊 Logistic Regression Model
+##  Logistic Regression Model
 
 This section explains the logistic regression model used to predict **teen smartphone addiction** based on behavioral and psychological factors.
 
 ---
 
-### 🧮 General Logistic Regression Equation
+###  General Logistic Regression Equation
 
 $$
 \log\left( \frac{P(\text{Addicted} = 1)}{1 - P(\text{Addicted} = 1)} \right) =
@@ -51,7 +51,7 @@ This equation lets us estimate a teen's probability of addiction based on their 
 
 ---
 
-### 🔢 Model Code and Output Table
+###  Model Code and Output Table
 
 ```{r}
 # Load necessary libraries
@@ -76,13 +76,23 @@ model <- logistic_reg() |>
       data = data)
 
 # Extract tidy summary of coefficients
-tidy_model <- tidy(model$fit)
+tidy_model <- tidy(model$fit, conf.int = TRUE) |>
+  rename(
+    Term = term,
+    Estimate = estimate,
+    Std_Error = std.error,
+    Statistic = statistic,
+    P_Value = p.value,
+    CI_Lower = conf.low,
+    CI_Upper = conf.high
+  )
+
 
 # Show clean regression table
-kable(tidy_model, caption = "🧮 Logistic Regression Coefficients", digits = 3)
+kable(tidy_model, caption = " Logistic Regression Coefficients", digits = 3)
 ```
 
-## ✅ Conclusion
+##  Conclusion
 
 The logistic regression table summarizes how each predictor influences the likelihood of teen smartphone addiction:
 

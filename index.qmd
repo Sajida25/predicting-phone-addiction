@@ -1,8 +1,10 @@
 ---
 title: "Teen Smartphone Usage and Addiction"
-author: "Sajida Rehman"
 format: html
 ---
+
+
+![](teen_addiction.gif)
 
 
 ## Summary:
@@ -11,27 +13,14 @@ Teen phone addiction is influenced by a combination of screen time, sleep habits
 
 
 
-##  Teen Phone Addiction
-
-![](teen_addiction.gif)
-
-## 📊 Teen Smartphone Usage vs. Addiction Level
+##  Teen Smartphone Usage vs. Addiction Level
 
 This animated bubble chart visualizes the relationship between **daily smartphone usage** and **addiction level** among teenagers, across different **school grades (7th to 12th)**.
 
-### Chart Details
-
-- **X-axis**: **Daily Usage Hours**  
-- **Y-axis**: **Addiction Level (0–10)**  
-- **Color**: Gender (blue = Male, pink = Female)  
-- **Size**: Sleep Hours (larger bubbles = more sleep)
-
-### Interpretation
+## Interpretation
 
 - Teens with higher daily phone usage generally report **higher addiction levels**.
 - **Addiction levels tend to cluster between 8–10**, even at moderate usage levels.
 - Both genders exhibit similar trends in addiction, with no major visual gap between male and female students.
 - **Larger bubbles** (more sleep) tend to be positioned at **lower addiction levels**, suggesting that **more sleep might help buffer phone addiction**.
-
-This animated visualization reveals how addiction levels change as teens progress through school, highlighting the potential impact of **sleep and screen time** on teen well-being.
 

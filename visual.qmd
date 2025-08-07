@@ -7,7 +7,7 @@ execute:
   message: false
 ---
 
-## 📊 Waffle Chart: Teen Smartphone Addiction Ratio
+## Waffle Chart: Teen Smartphone Addiction Ratio
 
 ```{r}
 library(ggplot2)
@@ -47,7 +47,7 @@ waffle(
   )
 ```
 
-###  Interpretation
+## Interpretation
 
 This waffle chart visualizes the **proportion of teenagers** who are addicted to their smartphones (Addiction_Level ≥ 8).
 
@@ -61,7 +61,7 @@ A **majority of teens in the dataset are addicted**. This suggests that smartpho
 
 ---
 
-## 🌐 3D Surface Plot: Addiction Probability by Usage & Social Media Time
+##  3D Surface Plot: Addiction Probability by Usage & Social Media Time
 
 ```{r}
 library(plotly)
@@ -125,7 +125,7 @@ As both **screen time** and **social media time** increase, the **risk of addict
 
 ---
 
-## ✅ Summary of Visual Insights
+##  Summary of Visual Insights
 
 1. **Waffle Chart** shows that a **majority** of teens in the dataset are addicted.
 2. **3D Surface Plot** reveals that addiction probability **increases sharply** with more screen and social media use.

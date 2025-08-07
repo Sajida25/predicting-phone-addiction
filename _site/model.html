@@ -153,13 +153,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#logistic-regression-model" id="toc-logistic-regression-model" class="nav-link active" data-scroll-target="#logistic-regression-model">📊 Logistic Regression Model</a>
+  <li><a href="#logistic-regression-model" id="toc-logistic-regression-model" class="nav-link active" data-scroll-target="#logistic-regression-model">Logistic Regression Model</a>
   <ul class="collapse">
-  <li><a href="#general-logistic-regression-equation" id="toc-general-logistic-regression-equation" class="nav-link" data-scroll-target="#general-logistic-regression-equation">🧮 General Logistic Regression Equation</a></li>
+  <li><a href="#general-logistic-regression-equation" id="toc-general-logistic-regression-equation" class="nav-link" data-scroll-target="#general-logistic-regression-equation">General Logistic Regression Equation</a></li>
   <li><a href="#estimated-logistic-regression-equation" id="toc-estimated-logistic-regression-equation" class="nav-link" data-scroll-target="#estimated-logistic-regression-equation">Estimated Logistic Regression Equation</a></li>
-  <li><a href="#model-code-and-output-table" id="toc-model-code-and-output-table" class="nav-link" data-scroll-target="#model-code-and-output-table">🔢 Model Code and Output Table</a></li>
+  <li><a href="#model-code-and-output-table" id="toc-model-code-and-output-table" class="nav-link" data-scroll-target="#model-code-and-output-table">Model Code and Output Table</a></li>
   </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">✅ Conclusion</a>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
   <ul class="collapse">
   <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways:</a></li>
   </ul></li>
@@ -189,11 +189,11 @@ window.Quarto = {
 
 
 <section id="logistic-regression-model" class="level2">
-<h2 class="anchored" data-anchor-id="logistic-regression-model">📊 Logistic Regression Model</h2>
+<h2 class="anchored" data-anchor-id="logistic-regression-model">Logistic Regression Model</h2>
 <p>This section explains the logistic regression model used to predict <strong>teen smartphone addiction</strong> based on behavioral and psychological factors.</p>
 <hr>
 <section id="general-logistic-regression-equation" class="level3">
-<h3 class="anchored" data-anchor-id="general-logistic-regression-equation">🧮 General Logistic Regression Equation</h3>
+<h3 class="anchored" data-anchor-id="general-logistic-regression-equation">General Logistic Regression Equation</h3>
 <p><span class="math display">\[
 \log\left( \frac{P(\text{Addicted} = 1)}{1 - P(\text{Addicted} = 1)} \right) =
 \beta_0 + \beta_1 \cdot \text{DailyUsage} +
@@ -231,18 +231,29 @@ window.Quarto = {
 <hr>
 </section>
 <section id="model-code-and-output-table" class="level3">
-<h3 class="anchored" data-anchor-id="model-code-and-output-table">🔢 Model Code and Output Table</h3>
+<h3 class="anchored" data-anchor-id="model-code-and-output-table">Model Code and Output Table</h3>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<caption>🧮 Logistic Regression Coefficients</caption>
+<caption>Logistic Regression Coefficients</caption>
+<colgroup>
+<col style="width: 27%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
+<th style="text-align: left;">Term</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">Std_Error</th>
+<th style="text-align: right;">Statistic</th>
+<th style="text-align: right;">P_Value</th>
+<th style="text-align: right;">CI_Lower</th>
+<th style="text-align: right;">CI_Upper</th>
 </tr>
 </thead>
 <tbody>
@@ -252,6 +263,8 @@ window.Quarto = {
 <td style="text-align: right;">0.375</td>
 <td style="text-align: right;">-7.648</td>
 <td style="text-align: right;">0.000</td>
+<td style="text-align: right;">-3.611</td>
+<td style="text-align: right;">-2.139</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Daily_Usage_Hours</td>
@@ -259,6 +272,8 @@ window.Quarto = {
 <td style="text-align: right;">0.048</td>
 <td style="text-align: right;">23.081</td>
 <td style="text-align: right;">0.000</td>
+<td style="text-align: right;">1.019</td>
+<td style="text-align: right;">1.208</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Sleep_Hours</td>
@@ -266,6 +281,8 @@ window.Quarto = {
 <td style="text-align: right;">0.043</td>
 <td style="text-align: right;">-13.356</td>
 <td style="text-align: right;">0.000</td>
+<td style="text-align: right;">-0.666</td>
+<td style="text-align: right;">-0.496</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Time_on_Social_Media</td>
@@ -273,6 +290,8 @@ window.Quarto = {
 <td style="text-align: right;">0.072</td>
 <td style="text-align: right;">17.110</td>
 <td style="text-align: right;">0.000</td>
+<td style="text-align: right;">1.096</td>
+<td style="text-align: right;">1.379</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Anxiety_Level</td>
@@ -280,6 +299,8 @@ window.Quarto = {
 <td style="text-align: right;">0.020</td>
 <td style="text-align: right;">0.159</td>
 <td style="text-align: right;">0.874</td>
+<td style="text-align: right;">-0.037</td>
+<td style="text-align: right;">0.043</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Depression_Level</td>
@@ -287,6 +308,8 @@ window.Quarto = {
 <td style="text-align: right;">0.020</td>
 <td style="text-align: right;">2.268</td>
 <td style="text-align: right;">0.023</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">0.086</td>
 </tr>
 </tbody>
 </table>
@@ -295,7 +318,7 @@ window.Quarto = {
 </section>
 </section>
 <section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">✅ Conclusion</h2>
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>The logistic regression table summarizes how each predictor influences the likelihood of teen smartphone addiction:</p>
 <ul>
 <li><strong>Intercept (-2.869):</strong> Represents the baseline log-odds of being addicted when all predictors are zero.</li>

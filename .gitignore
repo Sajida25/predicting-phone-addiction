@@ -1,5 +1,19 @@
-*_files
+# Quarto cache and output
+*_cache/
+*_files/
+_site/
 
+# RStudio and R-related
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
 
-
+# Quarto internal metadata
 /.quarto/
+
+# System-specific
+.DS_Store
+Thumbs.db
+
+
